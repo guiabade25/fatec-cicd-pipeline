@@ -13,15 +13,7 @@ def buscar_usuario(nome):
     return cursor.fetchall()
 
 
-def login(usuario, senha):
-    conn = sqlite3.connect("banco.db")
-    cursor = conn.cursor()
-    cursor.execute(
-        "SELECT * FROM users WHERE username='" + usuario +
-        "' AND password='" + senha + "'"
-    )
-    return cursor.fetchone()
-
-
 if __name__ == "__main__":
     print(soma(2, 3))
+    nome = input("Digite o nome: ")
+    buscar_usuario(nome)
