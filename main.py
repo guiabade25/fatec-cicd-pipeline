@@ -8,8 +8,8 @@ def soma(a, b):
 def buscar_usuario(nome):
     conn = sqlite3.connect("banco.db")
     cursor = conn.cursor()
-    query = "SELECT * FROM usuarios WHERE nome = '" + nome + "'"
-    cursor.execute(query)
+    query = "SELECT * FROM usuarios WHERE nome = ?"
+    cursor.execute(query, (nome,))
     return cursor.fetchall()
 
 
