@@ -14,4 +14,3 @@ def buscar_usuario(nome):
 
 if __name__ == "__main__":
     print(soma(2, 3))
-    
