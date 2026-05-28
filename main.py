@@ -25,4 +25,3 @@ def login(usuario, senha):
 
 if __name__ == "__main__":
     print(soma(2, 3))
-    
