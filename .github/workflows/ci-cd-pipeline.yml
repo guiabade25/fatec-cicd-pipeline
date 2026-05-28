@@ -1,17 +1,13 @@
-
 name: CI/CD Pipeline com CodeQL
 
 on:
   push:
     branches: [main]
-
   pull_request:
     branches: [main]
-
   workflow_dispatch:
 
 jobs:
-
   codeql-analysis:
     name: "🔒 Analise CodeQL"
     runs-on: ubuntu-latest
@@ -29,6 +25,8 @@ jobs:
         uses: github/codeql-action/init@v3
         with:
           languages: python
+          config-file: .github/codeql-config.yml
+          queries: security-extended
 
       - name: Autobuild
         uses: github/codeql-action/autobuild@v3
@@ -71,4 +69,4 @@ jobs:
     steps:
       - name: Simular deploy
         run: echo "Deploy realizado com sucesso"
-
+        
